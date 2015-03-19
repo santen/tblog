@@ -49,4 +49,30 @@ class DefaultController extends Controller
 
         return $this->redirectToRoute('profile', array('id' => $userId));
     }
+
+    /**
+     * @Route("/authors", name = "authors")
+     * @Template()
+     */
+    public function usersAction(){
+        $users = $this->getDoctrine()->getRepository("UserBundle:user")->findAll();
+
+        return $this->render('default/authors.html.twig', array('users' => $users));
+    }
+
+    /**
+     * @Route("/profile/{id}", name = "profile")
+     * @Template()
+     */
+    public function profileAction($id){
+    	$uid = $_COOKIE["uid"];
+    	$sid = $_COOKIE["sid"];
+
+    	$user = $this->getDoctrine()->getRepository("UserBundle:user")->find($id);
+
+    	if($uid != $id)
+        	return $this->render('default/author.html.twig', array('user' => $user));
+        else
+			return $this->render('default/profile.html.twig', array('user' => $user));
+    }
 }
