@@ -75,4 +75,6 @@ class DefaultController extends Controller
         else
 			return $this->render('default/profile.html.twig', array('user' => $user));
     }
+
+
 }

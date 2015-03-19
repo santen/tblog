@@ -3,11 +3,17 @@
 namespace BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
-    {
-        return $this->render('BlogBundle:Default:index.html.twig', array('name' => $name));
-    }
+	/**
+     * @Route("/", name="index")
+     * @Template()
+     */
+    public function indexAction(){
+        return $this->render('BlogBundle:Default:index.html.twig');
+    }    
 }

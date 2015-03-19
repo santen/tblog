@@ -1,0 +1,58 @@
+BlogBundle\Entity\Post:
+    type: entity
+    table: post
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        authorId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: author_id
+        rubricId:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: rubric_id
+        title:
+            type: string
+            nullable: false
+            length: 250
+            fixed: false
+            comment: ''
+        preview:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        content:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        cdate:
+            type: date
+            nullable: false
+            comment: ''
+        edate:
+            type: date
+            nullable: true
+            comment: ''
+        views:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            default: '0'
+    lifecycleCallbacks: {  }
