@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="{{asset('js/jquery-2.1.3.min.js')}}" language="JavaScript"></script>
+	<link href="{{asset('lib/bootstrap-3.3.2-dist/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+	<script src="{{asset('lib/bootstrap-3.3.2-dist/js/bootstrap.min.js')}}" language="JavaScript"></script>
+	
+	<link href="{{asset('css/blogger.css?78934')}}" rel="stylesheet" type="text/css" />
+	<script src="{{asset('js/account.js?3453')}}" language="JavaScript"></script>
+	<title>t-blog registration</title>
+</head>
+<body>
+	<div class="tblog-container">
+		<div class="tblog-head">
+			<img alt="Brand" src="{{asset('images/logo.png')}}">
+		</div>
+		
+		<div class="container">
+			<nav class="navbar navbar-default" role="navigation">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>			
+				</div>
+				
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Авторы</a></li>
+						<li><a href="#">Сообщества</a></li>
+					</ul>
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search">
+						</div>
+						<button type="submit" class="btn btn-default">Искать</button>
+					</form>
+					
+					<button type="submit" class="btn btn-default navbar-btn" title="Написать статью">
+						<span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+					</button>
+					<button type="submit" class="btn btn-default navbar-btn" title="Избранное">
+						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+					</button>
+					<button type="submit" class="btn btn-default navbar-btn" title="Настройки">
+						<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+					</button>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Выйти</a></li>				
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</nav>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-9">
+				{% render "BlogBundle:Default:index" with {'authorId': author.getAuthorId()} %}
+			</div>
+			<div class="col-lg-3">
+				{% block author %}
+				{% endblock %}
+
+				{% render "BlogBundle:Default:getRubrics" with {'authorId': author.getAuthorId()} %}
+			</div>
+		</div>
+	</div>

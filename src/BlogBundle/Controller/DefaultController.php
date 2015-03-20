@@ -20,7 +20,7 @@ class DefaultController extends Controller
     	$author = $this->getDoctrine()->getRepository("UserBundle:user")->find($authorId);
     	$posts = $this->getDoctrine()->getRepository("BlogBundle:post")->findBy(array('author_id' => $authorId));
 
-        return $this->render('BlogBundle:Default:index.html.twig', array('author' => $author, 'posts' => $posts));
+        return $this->render('BlogBundle:Default:posts.html.twig', array('author' => $author, 'posts' => $posts));
     }
 
     /**
@@ -37,7 +37,7 @@ class DefaultController extends Controller
 	 * @Route("/rubrics/create", name="newrubric")
 	 * @Template()
 	 */
-	public function addRubricAction(){
+	public function addRubricAction(Request $request){
 		$userId = $_COOKIE["uid"];
 
 		$manager = $this->getDoctrine()->getManager();
@@ -56,7 +56,7 @@ class DefaultController extends Controller
 	 * @Route("/post/create", name="newpost")
 	 * @Template()
 	 */
-	public function addPostAction(){
+	public function addPostAction(Request $request){
 		$authorId = $_COOKIE["uid"];
 
 		$manager = $this->getDoctrine()->getManager();
