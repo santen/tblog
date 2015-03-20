@@ -6,8 +6,8 @@
 	<link href="{{asset('lib/bootstrap-3.3.2-dist/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
 	<script src="{{asset('lib/bootstrap-3.3.2-dist/js/bootstrap.min.js')}}" language="JavaScript"></script>
 	
-	<link href="{{asset('css/blogger.css?78934')}}" rel="stylesheet" type="text/css" />
-	<script src="{{asset('js/account.js?3453')}}" language="JavaScript"></script>
+	<link href="{{asset('css/tblog.css?78934')}}" rel="stylesheet" type="text/css" />
+	<script src="{{asset('js/profile.js?3453')}}" language="JavaScript"></script>
 	<title>t-blog registration</title>
 </head>
 <body>
@@ -63,10 +63,12 @@
 				{% render "BlogBundle:Default:index" with {'authorId': author.getAuthorId()} %}
 			</div>
 			<div class="col-lg-3">
-				{% block author %}
-				{% endblock %}
+				<div class="profile-sidebar">
+					{% block author %}
+					{% endblock %}
 
-				{% render "BlogBundle:Default:getRubrics" with {'authorId': author.getAuthorId()} %}
+					{% render "BlogBundle:Default:getRubrics" with {'authorId': author.getAuthorId()} %}
+				</div>
 			</div>
 		</div>
 	</div>

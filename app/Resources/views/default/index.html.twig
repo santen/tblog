@@ -1,5 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends '::profile.html.twig' %}
 
-{% block body %}
-    Homepage.
+{% block author %}
+    <div class="account-photo">
+		<img src="{{ asset('images/avatars/4.jpg') }}" class="img-circle" id="avatar" alt="">
+		<div class="avatar-menu">
+			Загрузить фото
+		</div>
+		<div class="avatar-upload">
+			<input type="file" id="avatar_upload">
+		</div>
+	</div>
 {% endblock %}
