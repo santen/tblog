@@ -23,4 +23,10 @@ BlogBundle\Entity\Rubric:
             length: 40
             fixed: false
             comment: ''
+        posts:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            default: '0'
     lifecycleCallbacks: {  }

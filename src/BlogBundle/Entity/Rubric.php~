@@ -80,32 +80,4 @@ class Rubric
     {
         return $this->rubric;
     }
-    /**
-     * @var integer
-     */
-    private $posts;
-
-
-    /**
-     * Set posts
-     *
-     * @param integer $posts
-     * @return Rubric
-     */
-    public function setPosts($posts)
-    {
-        $this->posts = $posts;
-
-        return $this;
-    }
-
-    /**
-     * Get posts
-     *
-     * @return integer 
-     */
-    public function getPosts()
-    {
-        return $this->posts;
-    }
 }

@@ -1,0 +1,14 @@
+<div class="sidebar-widget">
+	<ul class="nav nav-tabs">
+		<li role="presentation" class="active"><a href="#">Рубрики</a></li>
+		<li role="presentation"><a href="#">Архив</a></li>
+	</ul>
+	<br />
+	<ul class="nav nav-pills nav-stacked">
+		{% for rubruc in rubrics %}
+			<li role="presentation" class="active">
+				<a href="#">{{ rubric.rubric }} <span class="badge">{{ rubric.posts }}</span></a>
+			</li>
+		{% endfor %}
+	</ul>	
+</div>
